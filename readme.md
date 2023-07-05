@@ -89,3 +89,16 @@ const oldCivic = {
     console.log(item.summary());
 }`
 
+--------------------------------------------------------------------------
+
+### Interface and Abstract Classess:
+
+#### Interfaces: 
+- Sets up a contract between different classes. 
+- Use when we have very different objects that we want to work together.
+- Promotes loose coupling.
+
+#### Inheritancs / Abstract Classes:
+- Sets up a contract between different classes.
+- Use when we are trying to build up a definition of an object.
+- Strongly couples classes together.
