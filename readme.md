@@ -102,3 +102,27 @@ const oldCivic = {
 - Sets up a contract between different classes.
 - Use when we are trying to build up a definition of an object.
 - Strongly couples classes together.
+
+------------------------------------------------------------------------
+
+### enum:
+- you are only gonna use enum when you ahead of time know what the structure is gonna be.
+- I big part of enum is to signal other engineers about the structure.
+
+### Generics:
+- like function arguments, but for types in class/function definition.
+- allows use to define a type of a property/argument/ return value at a a future point.
+- Used heavily when writing reusable code.
+
+```Javascript
+
+class holdAnything<typeOfData {
+    data: number;
+}
+const holdNumber = new holdAnything<number>();
+
+```
+
+
+
+
