@@ -23,21 +23,17 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CsvFileReader = void 0;
+exports.HtmlReport = void 0;
 const fs = __importStar(require("node:fs"));
-class CsvFileReader {
-    constructor(fileName) {
-        this.data = [];
-        this.fileName = fileName;
-    }
-    read() {
-        this.data = fs
-            .readFileSync(this.fileName, {
-            encoding: 'utf-8',
-        }).split('\n')
-            .map((row) => {
-            return row.split(',');
-        });
+class HtmlReport {
+    print(report) {
+        const html = `
+            <div>
+                <h1>Analysis Output</h1>
+                <div>${report}</div>
+            </div>
+        `;
+        fs.writeFileSync('report.html', html);
     }
 }
-exports.CsvFileReader = CsvFileReader;
+exports.HtmlReport = HtmlReport;

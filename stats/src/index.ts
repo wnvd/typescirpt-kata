@@ -1,20 +1,25 @@
 import { MatchReader } from "./MatchReader";
-import { MatchResult } from "./MatchResult";
+import { CsvFileReader } from "./CsvFileReader";
+import { Summary } from "./Summary";
 
-const reader = new MatchReader('./src/football.csv');
-reader.read();
+//-- created a static function in MatchReader so dont need it.
 
-function count(team: string): number {
-    let counter = 0;
-    for (let match of reader.data) {
-        if (match[1] === team && match[5] === MatchResult.HomeWin) {
-            counter++;
-        } else if (match[2] === team && match[5] === MatchResult.AwayWin) {
-            counter++;
-        }
-    }
-    return counter;
-}
+// create an object that satisfies the 'DataReader' interface
+// const csvFileReader = new CsvFileReader('./src/football.csv');
 
-console.log(count('Man United'));
-console.log(count('Leicester'));
+// -- Created a static function, to make less verbose
+// Create an instance of MatchReader and pass in somehting satisfying
+// the 'DataReader' interface.
+// const matchReader = new MatchReader(csvFileReader);
+// matchReader.load();
+const matchReader = MatchReader.fromCsv('./src/football.csv');
+matchReader.load();
+//-- we can now reference matchReader.matches
+
+//-- this was too verbose so we created a staitic method in class Summary
+// const summary = new Summary(new WinsAnalysis('Man United'), new HtmlReport());
+const summary = Summary.winsAnalysisHtmlReport('Man United');
+summary.buildAndPrintReports(matchReader.matches);
+
+
+

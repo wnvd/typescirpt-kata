@@ -31,13 +31,13 @@ class CsvFileReader {
         this.fileName = fileName;
     }
     read() {
-        this.data = fs
-            .readFileSync(this.fileName, {
+        this.data = fs.readFileSync(this.fileName, {
             encoding: 'utf-8',
         }).split('\n')
             .map((row) => {
             return row.split(',');
-        });
+        })
+            .map(this.mapRow);
     }
 }
 exports.CsvFileReader = CsvFileReader;
