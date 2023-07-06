@@ -3,7 +3,6 @@ import { CsvFileReader } from "./CsvFileReader";
 import { Summary } from "./Summary";
 
 //-- created a static function in MatchReader so dont need it.
-
 // create an object that satisfies the 'DataReader' interface
 // const csvFileReader = new CsvFileReader('./src/football.csv');
 
