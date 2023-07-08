@@ -32,13 +32,13 @@ easy way to refer to all the properties.
 - types allow other engineers to understand what values are flowing
 through our codebase.
 ------------------------------------------------------------------
-### Type Annotation and Type Inference:
+### Type Annotation and Type Inference:: 
 - Type Annotation -> we (developers) tell TS the type.
 - Type Inference -> TS guesses the type.
     - if declaration and initialization are on the same line,
     Typescipt will figure out the type of 'color' for us.
 ------------------------------------------------------------------
-### Type annotaions for functions:
+### Type annotaions for functions::
 - code we add to tell typescript what type of arguments a function
 will receive and what type of values it will return
 
@@ -122,7 +122,11 @@ class holdAnything<typeOfData {
 const holdNumber = new holdAnything<number>();
 
 ```
-
-
+#### Also you can add constraints to Generics:
+- look `./features/generics.ts`
+- where we are extends <T> with interface printable to set constraints 
+ of that type(in a way we are promising to set a type(class in this case) to have a printable method), as types string, array dont have print property
+ on them like length
+--------------------------------------------------------------------------
 
 

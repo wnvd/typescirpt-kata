@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
+  },
+  "scripts": {
+    "start:db": "json-server -w -p 4000 ./db.json",
+    "start:parcel": "npx parcel ./index.html",
+    "dev": "concurrently \"pnpm run start:db\" \"pnpm run start:parcel\""
+  }
+}
